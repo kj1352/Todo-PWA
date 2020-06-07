@@ -1,7 +1,7 @@
 {
   "name": "Todo",
   "short_name": "Todo",
-  "theme_color": "#1b1d1e",
+  "theme_color": "#ffffff",
   "background_color": "#1b1d1e",
   "display": "fullscreen",
   "scope": "./",
