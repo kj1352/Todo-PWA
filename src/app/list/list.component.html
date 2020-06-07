@@ -1,0 +1,22 @@
+<header>
+    <h4> TODO <span *ngIf="showCompleted"> + COMPLETED </span> </h4>
+    <input type="checkbox" [(ngModel)]="showCompleted">
+</header>
+<ul>
+    <li *ngFor="let todo of todoList; let i = index"
+    [ngClass]="{'hidden' : !showCompleted && todo.isComplete }">
+        <div class="container">
+            <input type="checkbox" [(ngModel)]="todo.isComplete" id="todo-{{ i }}">
+            <label for="todo-{{ i }}"> {{ todo.text }} </label>
+        </div>
+        <div class="date"> {{ getFormattedDate(todo.deadline) }} </div>
+    </li>
+</ul>
+
+<section class="add-todo">
+    <input type="text" [(ngModel)]="newTodo.text" placeholder="Enter Todo">
+    <input type="date" [(ngModel)]="newTodo.deadline">
+    <button (click)="clearNewTodo()" class="outline"> Clear </button>
+    <button [disabled]="!newTodo.text && newTodo.deadline"
+    (click)="addTodo()"> Add </button>
+</section>

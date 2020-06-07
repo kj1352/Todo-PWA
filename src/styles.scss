@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    --black: #1b1d1e;
+    --light-grey: #cecece;
+}
+
+@font-face {
+    font-family: 'Questrial';
+    font-weight: normal;
+    src: url('./assets/font/Questrial-Regular.ttf');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Questrial';
+    outline: none;
+}
