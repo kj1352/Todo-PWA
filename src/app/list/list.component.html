@@ -6,7 +6,7 @@
     <li *ngFor="let todo of todoList; let i = index"
     [ngClass]="{'hidden' : !showCompleted && todo.isComplete }">
         <div class="container">
-            <input type="checkbox" [(ngModel)]="todo.isComplete" id="todo-{{ i }}">
+            <input type="checkbox" [(ngModel)]="todo.isComplete" id="todo-{{ i }}" (change)="updateTodo()">
             <label for="todo-{{ i }}"> {{ todo.text }} </label>
         </div>
         <div class="date"> {{ getFormattedDate(todo.deadline) }} </div>
